@@ -25,10 +25,10 @@ Follow these steps to set up and work on your project:
 
 Follow these steps for completing your project.
 
-- [ ] Submit a Pull-Request to merge `firstName-lastName` branch into `master` on your fork. **Please don't make Pull Requests against Lambda's repository**.
-- [ ] Please don't merge your own pull request.
-- [ ] Add your _Team Lead_ as a Reviewer on the Pull-request
-- [ ] Your _Team Lead_ will count the challenge as done by merging the branch into _master_.
+- [x] Submit a Pull-Request to merge `firstName-lastName` branch into `master` on your fork. **Please don't make Pull Requests against Lambda's repository**.
+- [x] Please don't merge your own pull request.
+- [x] Add your _Team Lead_ as a Reviewer on the Pull-request
+- [x] Your _Team Lead_ will count the challenge as done by merging the branch into _master_.
 
 ## Commits
 
@@ -38,13 +38,22 @@ Commit your code regularly and use descriptive messages. This helps both you (in
 
 Demonstrate your understanding of this week's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
-- [ ] What is the purpose of using _sessions_?
+- [x] What is the purpose of using _sessions_?
+    A session is a way to store information to be used across multiple pages. Unlike a cookie, the information is not stored on the users computer. Sessions are mainly used for keeping the user logged in, or if the data is to be accessed in multiple pages without recalling the database.
 
-- [ ] What does bcrypt do to help us store passwords in a secure manner.
+- [x] What does bcrypt do to help us store passwords in a secure manner.
+    Bcrypt is a cross platform file encryption utility from bcrypt. Bcrypt is an adaptive password hashing algorithm.
 
-- [ ] What does bcrypt do to slow down attackers?
+- [x] What does bcrypt do to slow down attackers?
+     Bcrypt was designed for password hashing hence it is a slow algorithm. This is good for password hashing as it reduces the number of passwords by second an attacker could hash when crafting an attack.
 
-- [ ] What are the three parts of the JSON Web Token?
+- [x] What are the three parts of the JSON Web Token?
+    
+    Header, Payload, Signature. 
+        * Header: The header carries 2 parts, 1)declaring the type, which is JWT and 2)the hashing algorithm to use. 
+        * Payload:The payload will carry the bulk of our JWT, also called the JWT Claims. This is where we will put the information that we want to         transmit and other information about our token.
+        * Signature: The third and final part of our JSON Web Token is going to be the signature. This signature is made up of a hash of the following      components: the header, the payload, and the secret.
+
 
 ## Minimum Viable Product
 
