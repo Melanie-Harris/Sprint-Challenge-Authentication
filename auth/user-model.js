@@ -4,9 +4,9 @@ const knexConfig = require('../knexfile.js');
 const db = knex(knexConfig.development)
 
 module.exports = {
-    findUser,
-    findBy,
-    addUser, 
+    findUser, // get full list of users
+    findBy, //login - finds specific user
+    addUser,  //create a new user
 }
 
 function findUser() {

@@ -2,7 +2,7 @@ const router = require('express').Router();
 const db = require('./user-model.js');
 
 
-const restricted = require('../auth/authenticate-middleware.js');
+const restricted = require('./authenticate-middleware.js');
 
 router.get('/users', restricted, (req, res) => {
     return db.findUser()
@@ -12,6 +12,6 @@ router.get('/users', restricted, (req, res) => {
         .catch(err => {
             res.status(400).json({ message: 'Could not retrieve user list, make sure you are logged in.' })
         })
-})//creates a new user for database
+})//Get list of users after being properly logged in
 
 module.exports = router;

@@ -2,7 +2,7 @@ const router = require('express').Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const secret = require('../config/secret.js');
-const users= require('../users/user-model.js');
+const users= require('./user-model.js');
 
 router.post('/reg', (req, res) => {
   const user = req.body
@@ -14,7 +14,7 @@ router.post('/reg', (req, res) => {
     }).catch(error => {
       res.status(500).json({ message: 'failed to register user' })
     })
-})
+})// creates user
 
 
 router.post('/login', (req, res) => {
@@ -31,7 +31,7 @@ router.post('/login', (req, res) => {
     }).catch(error => {
       res.status(500).json({ message: 'Hey backend, you messed up, login failed' })
     })
-})
+})// logs in the user
 
 function generateToken(user) {
   const payload = {
@@ -42,6 +42,6 @@ function generateToken(user) {
     expiresIn: '8h'
   }
   return jwt.sign(payload, secret.jwtSecret, option)
-}
+}// protection
 
 module.exports = router;
